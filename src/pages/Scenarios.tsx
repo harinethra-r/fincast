@@ -24,7 +24,7 @@ export default function Scenarios() {
     {
       role: "assistant",
       content:
-        "I'm the What-If engine — ask anything about markets and your mix. I answer in weather language, grounded in how strategists and long-run data usually frame these risks. Illustrative only, not personal advice.",
+        "I'm the What-If engine — ask anything about markets and your mix. I’ll use **your actual demo account dollars** (total, risk sleeve, shelter) and tie answers to the scenario card you picked. Illustrative only, not personal advice.",
     },
   ]);
   const [aiInput, setAiInput] = useState("");
@@ -49,7 +49,7 @@ export default function Scenarios() {
     const selectedLine = `${s.weatherEvent} — ${s.financialName} (${s.pct > 0 ? "+" : ""}${s.pct}% sketch)`;
 
     if (!hasAnthropicKey()) {
-      const reply = answerWhatIfLocal(userMsg.content, selectedLine);
+      const reply = answerWhatIfLocal(userMsg.content, selectedLine, s);
       setAiMessages([...thread, { role: "assistant", content: reply }]);
       requestAnimationFrame(() => aiBottomRef.current?.scrollIntoView({ behavior: "smooth" }));
       return;

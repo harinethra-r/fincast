@@ -200,6 +200,8 @@ export const SCENARIOS = [
   },
 ] as const;
 
+export type Scenario = (typeof SCENARIOS)[number];
+
 /** Plain-language rebalance guidance per scenario (prototype — illustrative). */
 export type ScenarioRebalancePlan = {
   headline: string;

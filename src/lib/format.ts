@@ -7,7 +7,8 @@ export function fmtUsd(n: number): string {
 }
 
 export function fmtSignedUsd(n: number): string {
-  const sign = n >= 0 ? "+" : "";
+  if (n === 0) return fmtUsd(0);
+  const sign = n > 0 ? "+" : "−";
   return sign + fmtUsd(Math.abs(n));
 }
 

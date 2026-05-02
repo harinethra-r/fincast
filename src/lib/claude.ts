@@ -4,6 +4,8 @@
  * production apps should proxy through a backend.
  */
 
+import { buildWhatIfNumericContextForLLM } from "@/lib/whatIfTailoring";
+
 export type Message = { role: "user" | "assistant"; content: string };
 
 const SYSTEM_PROMPT = `
@@ -79,7 +81,7 @@ function textFromStreamEvent(raw: unknown): string | null {
 }
 
 export function buildWhatIfSystemPrompt(selectedScenarioLine: string): string {
-  return `${WHAT_IF_SYSTEM_PROMPT}\n\nCurrent preset focus on screen: ${selectedScenarioLine}`;
+  return `${WHAT_IF_SYSTEM_PROMPT}\n\n${buildWhatIfNumericContextForLLM()}\n\nCurrent preset focus on screen: ${selectedScenarioLine}\n\nWhen the user asks for numbers, use the numeric block above. For a “market down X%” style question, assume the shock hits the risk sleeve first, then show estimated $ loss on that sleeve, % of the full account, and a rough new total (illustration only).`;
 }
 
 export async function streamToFincast(
