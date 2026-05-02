@@ -54,7 +54,7 @@ It uses a weather metaphor to keep everything jargon‑free:
 ## Live demo
 After GitHub Pages is enabled (below), the app will be available at:
 
-- (http://localhost:5175/)
+- [(http://localhost:5175/)](https://fincast01.netlify.app/)
 
 ## Getting started
 ### Prereqs
