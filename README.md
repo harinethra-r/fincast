@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Fincast
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beginner-friendly portfolio “weather report” that combines **stocks + ETFs + mutual funds** into one calm dashboard, then turns market uncertainty into **simple what‑if scenarios** and **clear rebalancing moves** (with costs/tax notes in plain English).
 
-Currently, two official plugins are available:
+## What this is
+Fincast is a prototype that helps non‑experts answer:
+- “How healthy is my portfolio right now?”
+- “What happens if the market drops 20% / inflation stays high / I need cash next year?”
+- “What should I actually do, step by step?”
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+It uses a weather metaphor to keep everything jargon‑free:
+- **Storm risk** = how bumpy your ride may feel  
+- **Shelter** = bonds/cash cushion  
+- **Overheating** = a slice that’s gotten too big
 
-## React Compiler
+## Key features (challenge requirements)
+### Unified & intuitive dashboard
+- One view that aggregates **individual stocks + mutual funds + ETFs**
+- Portfolio **health score**, **storm risk meter**, and **color-coded allocation**
+- Tap-friendly visuals instead of intimidating tables
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Scenario-driven rebalancing engine
+- Pick a scenario (e.g. **market −20%**, **inflation high**, **withdraw 20% next year**)
+- Get a **plain-English rebalancing plan** with concrete next steps
+- Link to a “trade list” view so actions are easy to execute
 
-## Expanding the ESLint configuration
+### Radical transparency
+- “How we decided” logic written in simple steps
+- **Costs** (commission/spread) explained clearly
+- **Tax note** (taxable vs retirement accounts) explained clearly
+- Each plan ties back to **goals** (home, education, retirement)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Guided goal-setting
+- Quick onboarding quiz with no finance-exam vocabulary
+- Pick goals (safety net, home, education, retirement)
+- App uses goals + risk comfort to frame recommendations
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Pages
+- **Today’s Forecast**: portfolio at-a-glance dashboard
+- **Your Sky**: unified holdings cards (stocks/funds/ETFs together)
+- **Storm Risk**: risk & turbulence view
+- **What If…**: scenario stress tests → rebalancing plan
+- **Storm Warnings**: trade list + costs/taxes/why
+- **Your Horizon**: goal timeline
+- **Weather Profile**: onboarding (risk comfort + goals)
+- **Ask Fincast AI**: chat-style guidance (prototype/local fallbacks supported)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech stack
+- React + TypeScript + Vite
+- Tailwind CSS
+- React Router
+- Chart.js
