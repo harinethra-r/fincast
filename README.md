@@ -54,7 +54,7 @@ It uses a weather metaphor to keep everything jargon‑free:
 ## Live demo
 After GitHub Pages is enabled (below), the app will be available at:
 
-- https://harinethra-r.github.io/fincast/
+- (http://localhost:5175/)
 
 ## Getting started
 ### Prereqs
