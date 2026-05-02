@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>Fincast · v0.1.2</title>
@@ -12,6 +12,19 @@
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@600&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // GitHub Pages SPA fallback:
+      // When a user refreshes on /fincast/some/route, Pages serves /404.html which redirects to
+      // /fincast/?/some/route. This script turns that back into a normal path for React Router.
+      (function (l) {
+        if (l.search && l.search.startsWith("?/")) {
+          var path = l.search.slice(2);
+          var q = path.indexOf("&");
+          if (q !== -1) path = path.slice(0, q);
+          window.history.replaceState(null, "", l.pathname + path + l.hash);
+        }
+      })(window.location);
+    </script>
   </head>
   <body>
     <script>

@@ -9,23 +9,30 @@ import StormRisk from "@/pages/StormRisk";
 import StormWarnings from "@/pages/StormWarnings";
 import WeatherProfile from "@/pages/WeatherProfile";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        { index: true, element: <Dashboard /> },
+        { path: "sky", element: <Sky /> },
+        { path: "storm-risk", element: <StormRisk /> },
+        { path: "scenarios", element: <Scenarios /> },
+        { path: "storm-warnings", element: <StormWarnings /> },
+        { path: "horizon", element: <Horizon /> },
+        { path: "weather-profile", element: <WeatherProfile /> },
+        { path: "assessment", element: <Navigate to="weather-profile" replace /> },
+        { path: "forecaster", element: <Forecaster /> },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <AppLayout />,
-    children: [
-      { index: true, element: <Dashboard /> },
-      { path: "sky", element: <Sky /> },
-      { path: "storm-risk", element: <StormRisk /> },
-      { path: "scenarios", element: <Scenarios /> },
-      { path: "storm-warnings", element: <StormWarnings /> },
-      { path: "horizon", element: <Horizon /> },
-      { path: "weather-profile", element: <WeatherProfile /> },
-      { path: "assessment", element: <Navigate to="/weather-profile" replace /> },
-      { path: "forecaster", element: <Forecaster /> },
-    ],
+    // On GitHub Pages the app is served under /<repo>/.
+    // Vite sets this to "/fincast/" during the Pages build.
+    basename: import.meta.env.BASE_URL,
   },
-]);
+);
 
 export default function App() {
   return <RouterProvider router={router} />;

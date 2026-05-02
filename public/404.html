@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fincast</title>
+  </head>
+  <body>
+    <script>
+      // GitHub Pages doesn't support SPA rewrites. Redirect unknown paths to the app root
+      // using a query prefix that index.html knows how to decode.
+      (function () {
+        var l = window.location;
+        var base = "/fincast/";
+        if (l.pathname.startsWith(base)) {
+          var rest = l.pathname.slice(base.length - 1); // keep leading "/"
+          l.replace(base + "?" + rest + l.search + l.hash);
+        } else {
+          l.replace(base);
+        }
+      })();
+    </script>
+  </body>
+</html>
+
