@@ -16,6 +16,9 @@ dist-ssr
 .env
 .env.*.local
 
+# Cursor IDE — local/cloud session metadata (do not commit; avoids odd open behavior for others)
+.cursor/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

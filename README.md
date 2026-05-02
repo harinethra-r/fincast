@@ -60,6 +60,19 @@ After GitHub Pages is enabled (below), the app will be available at:
 ### Prereqs
 - Node.js (18+ recommended)
 
+### Open this repo on another computer (code, not a login page)
+This project is **plain source code**. Nothing in the repo should send you to Cursor’s website by itself.
+
+If you **clone or download the ZIP** and the **Cursor app** shows a **sign-in** screen first, that is **Cursor’s first-time setup on that device** (not this repository). Do this:
+
+1. **Clone** (recommended) or unzip the GitHub archive.
+2. In Cursor: **File → Open Folder…** and choose the `fincast` folder (the one that contains `package.json`).
+3. Complete **one** Cursor sign-in on that machine if the app requires it, then open the folder again if needed.
+
+**Avoid relying on GitHub’s “Open in Cursor” browser button** if you only want local files—that flow starts in the browser and can feel like “login instead of code.” Use **git clone** + **Open Folder** instead.
+
+**Prefer not to use a Cursor account for this project?** Install [Visual Studio Code](https://code.visualstudio.com/), then **File → Open Folder…** → select the same `fincast` folder and run `npm install` / `npm run dev` in the integrated terminal. You can also double-click **`fincast.code-workspace`** at the repo root if your OS opens it in VS Code.
+
 ### Install & run
 ```bash
 npm install
