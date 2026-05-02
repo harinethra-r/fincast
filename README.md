@@ -50,3 +50,32 @@ It uses a weather metaphor to keep everything jargon‑free:
 - Tailwind CSS
 - React Router
 - Chart.js
+
+## Live demo
+After GitHub Pages is enabled (below), the app will be available at:
+
+- https://harinethra-r.github.io/fincast/
+
+## Getting started
+### Prereqs
+- Node.js (18+ recommended)
+
+### Install & run
+```bash
+npm install
+npm run dev
+```
+
+### Build
+```bash
+npm run build
+npm run preview
+```
+
+## Deploy (GitHub Pages)
+This repo includes a GitHub Actions workflow that deploys `main` to GitHub Pages.
+
+To enable it:
+1. GitHub repo → **Settings** → **Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. Push to `main` (or manually run the workflow in the **Actions** tab)

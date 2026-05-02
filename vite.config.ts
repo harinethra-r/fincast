@@ -4,6 +4,9 @@ import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig({
+  // GitHub Pages serves this project at /<repo>/, not at /.
+  // The Actions workflow sets GITHUB_PAGES=1 during build.
+  base: process.env.GITHUB_PAGES ? "/fincast/" : "/",
   plugins: [react(), tailwindcss()],
   server: {
     port: 5173,
